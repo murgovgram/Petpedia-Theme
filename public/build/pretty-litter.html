@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pretty-litter</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="px-4 mx-auto md:px-32 font-niramit max-w-screen-2xl">
+<div class="grid grid-cols-3  py-4 text-gray-700 bg-white border-b border-gray-200 ">
+    <div x-data="{ open: false }" class="flex flex-col md:items-left md:flex-row ">
+        <div class="flex flex-row justify-between py-4 items-left">
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!--Menu-->
+        <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-left md:flex-row">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-2 py-2 mt-2 text-lg text-left hover:underline font-lundrina md:w-auto md:inline md:mt-0 focus:outline-none focus:shadow-outline">
+                    <span>Reviews</span>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute rounded-md shadow-lg center w-max md:w-48">
+                    <div class="">
+                        <div class="absolute grid p-2 bg-white shadow-lg top-full">
+                            <ul class="">
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Best Pet Products</a></li>
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Pet Company Review</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 hover:underline font-lundrina focus:outline-none focus:shadow-outline" href="#">Deals</a>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 font-lundrina hover:underline focus:outline-none focus:shadow-outline" href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">News</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">About</a>
+        </div>    
+    </div>
+    <div class="flex justify-center col-span-1 ">
+        <img class="w-20 h-10" src="https://petpedia.co/wp-content/uploads/2020/05/Logo@2x.png" alt="">
+    </div>
+    <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-end md:flex-row">
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+    </div>
+</div>
+
+<div class=" mt-10 grid gap-8 md:grid-cols-12">
+    <div class="col-span-2 flex">
+        <img class="border w-52 border-gray-500" src="https://petpedia.co/wp-content/uploads/2020/08/Pretty-Litter-Discount-Code-Featured-Image.jpg" alt="">
+    </div>
+    <div class="col-span-10">
+        <h1 class="text-sm md:text-left text-center">Coupons</h1>
+        <h1 class="text-5xl md:text-left text-center mt-6 font-lundrina">Pretty Litter Coupons & Deals</h1>
+        <h1 class="text-sm mt-14 md:text-left text-center text-gray-600 align-text-bottom">written by Boriana Slabakova / Last Update: April 26, 2021</h1>
+    </div>
+</div>
+
+
+<div class=" mt-10 grid md:gap-4  md:grid-cols-12">
+    <div class="col-span-3">
+        <div class="md:text-left h-auto text-center md:sticky top-8 bg-gray-200 p-3">
+            <h1 class="text-3xl md:text-left text-center font-lundrina">Pretty Litter</h1>
+            <h1 class="text-lg md:text-left text-center mt-8 ">About Pretty Litter</h1>
+            <h1 class="leading-relaxed md:text-left text-center mt-2 text-gray-500 ">Pretty Litter delivers odor-controlled, health monitoring cat litter straight to your doorstep. Read on to discover everything you need to know about making significant savings when shopping...show more</h1>
+            <button class=" w-full bg-yellow-400 py-2 mt-4 rounded-md focus:outline-none font-medium text-center">
+                <h1>Visit Website</h1>
+            </button>
+        </div>
+    </div>
+    <div class="col-span-9 md:mt-0 mt-8 ">
+
+        <div class="w-full hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+        
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full mt-4 hover:shadow-2xl grid grid-cols-12 h-auto border-yellow-400 border ">
+            <div class="col-span-3 py-8 bg-yellow-400">
+                <h1 class="text-white text-3xl font-bold items-center justify-center flex">21%<br>OFF</h1>
+            </div>
+            <div class="col-span-6 ">
+                <h1 class=" text-xl mt-4 ml-4 font-medium  font-lundrina  ">21% Off Your Order</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block my-auto ml-4 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <h1 class=" mt-12 ml-1 my-auto inline-block text-gray-500"> Verified</h1>
+                </svg>
+            </div>
+            <div class="col-span-3 pr-2 ">
+                <button class="bg-yellow-400 focus:outline-none w-full font-bold rounded-md mt-16 py-3">
+                    <h1>Show Code</h1>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class=" max-w-screen-2xl mx-4 mt-16 md:mx-56">
+    <h1 class="text-lg text-left leading-relaxed text-gray-600 ">If you are planning on purchasing anything from Pretty Litter, check if there are any discounts. With a Pretty Litter discount code, you can get their premium products at significantly discounted prices. 
+        <br><br>
+        Pretty Litter delivers odor-controlled, health monitoring cat litter straight to your doorstep. Read on to discover everything you need to know about making significant savings when shopping with this company. </h1>
+    <h1 class="text-left font-lundrina text-4xl py-4">Pretty Litter Discount Code 2020 </h1>
+    <h1 class="text-lg text-left leading-relaxed text-gray-600 ">From the different types of Pretty Litter discount coupons to the various ways of redeeming them, this article will cover everything you need to know about saving money on your next purchase. </h1>
+    <h1 class="text-left font-lundrina text-4xl py-4">Types of Coupons</h1>
+    <h1 class="text-lg text-left leading-relaxed text-gray-600 ">There are several different ways to make savings when you shop with Pretty Litter. However, its discounts and offers do change regularly, so you’ll want to keep an eye out for new deals. 
+        <br><br>
+        Note that first-time buyers enjoy a percentage-off type of discount, while the top Pretty Litter discount codes are reserved for bulk buyers.</h1>
+    <h1 class="text-left font-lundrina text-4xl py-4">How to Find Coupon Codes</h1>
+    <h1 class="text-lg text-left leading-relaxed text-gray-600 ">Go to the FAQ section of the Pretty Litter website and click on the “Special Offers” tab. That’s where you’ll find all the current deals and discounts.</h1>
+    <h1 class="text-left font-lundrina text-4xl py-4">Promo Codes for Subscribing to a Newsletter </h1>
+    <h1 class="text-lg text-left leading-relaxed text-gray-600 ">When you visit the company’s website for the first time, don’t be tempted to dive straight in and start purchasing. 
+        <br><br>
+        Wait for the Pretty Litter first-order discount to pop-up, and leave your email in the designated box. After leaving your details, you will receive a code that gets first-time buyers 15% off their initial order.  
+        <br><br>
+        You are likely to keep receiving coupon codes in the future, so it’s worth staying subscribed to the newsletter. </h1>
+</div>
+
+<div class="mt-24 pb-16 px-4 mx-auto  max-w-screen-2xl grid md:grid-cols-12">
+    <div class="col-span-3">
+        <img class="w-52" src="https://petpedia.co/wp-content/uploads/2020/05/FooterLogo@2x-e1603411112640.png" alt="">
+        <h1 class="text-xs mt-2 font-thin">©2020 Petpedia.co – All Rights Reserved.</h1>
+    </div>
+    <div class="col-span-6">
+        <div class="grid grid-cols-3">
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Home</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Affiliate Disclosure</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">About Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Privacy Policy</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Contact Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Terms of Use</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-3 inline-block">
+        <div class="justify-items-end float-right flex ">
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

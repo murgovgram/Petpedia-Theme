@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="px-4 font-niramit mx-auto md:px-32 max-w-screen-2xl">
+<div class="grid grid-cols-3  py-4 text-gray-700 bg-white border-b border-gray-200 ">
+    <div x-data="{ open: false }" class="flex flex-col md:items-left md:flex-row ">
+        <div class="flex flex-row justify-between py-4 items-left">
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!--Menu-->
+        <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-left md:flex-row">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-2 py-2 mt-2 text-lg text-left hover:underline font-lundrina md:w-auto md:inline md:mt-0 focus:outline-none focus:shadow-outline">
+                    <span>Reviews</span>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute rounded-md shadow-lg center w-max md:w-48">
+                    <div class="">
+                        <div class="absolute grid p-2 bg-white shadow-lg top-full">
+                            <ul class="">
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Best Pet Products</a></li>
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Pet Company Review</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 hover:underline font-lundrina focus:outline-none focus:shadow-outline" href="#">Deals</a>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 font-lundrina hover:underline focus:outline-none focus:shadow-outline" href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">News</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">About</a>
+        </div>    
+    </div>
+    <div class="flex justify-center col-span-1 ">
+        <img class="w-20 h-10" src="https://petpedia.co/wp-content/uploads/2020/05/Logo@2x.png" alt="">
+    </div>
+    <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-end md:flex-row">
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+    </div>
+</div>
+
+<div class="flex py-8 ">
+    <img class="min-w-full rounded-md h-96 md:h-auto " src="images/cat-img.jpg" alt="">
+    <div class="absolute hidden ml-10 md: md:flex mt-14">
+        <button class="inline-block bg-green-400 rounded-lg focus:outline-none">
+            <h1 class="px-4 pt-6 text-6xl font-thin text-white font-lundrina ">R</h1>
+        </button>
+        <h1 class="items-center inline-block p-4 mt-8 text-xl font-thin text-white font-lundrina "> - Reviews</h1>
+    </div>
+    <div class="absolute flex m-10 mt-18 md:bottom-40">
+        <button class="text-white hover:opacity-50 focus:outline-none">
+            <h1 class="text-lg md:text-5xl font-lundrina">The Best Cat Harness in 2021 (Reviews & Buyer’s Guide)</h1>
+        </button>
+    </div>
+    <div class="absolute flex m-10 mt-24 md:bottom-32">
+        <h1 class="text-xs text-gray-300 font-extralight font-lundrina">
+            by <span class="font-normal">Chavdar Vasilev</span> 
+            Last updated:
+            March 12, 2021
+        </h1>
+    </div>
+    <div class="absolute flex m-10 mt-32 md:mr-48 md:bottom-16">
+        <h1 class="text-xl text-white font-extralight font-lundrina">Choosing the best cat harness is crucial to your pet’s safety. We’ve gathered the best of the best on the market so you can choose the ideal way to walk your cat.</h1>
+    </div>
+    <div class="absolute flex ml-10 md:bottom-3 mt-72">
+        <button class="px-6 py-4 text-white bg-yellow-400 rounded-md focus:outline-none">
+            <h1 class=" font-lundrina">Read More</h1>
+        </button>
+    </div>
+</div>
+
+
+<div class="grid grid-cols-1 mt-12 md:grid-cols-12 ">
+    <div class="col-span-9 ">
+        <div id="post-1">
+            <div class="grid flex-row grid-cols-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">04</h1>
+                    <h1 class="font-light text-center text-gray-400">May</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">B</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- Blog</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">What Human Food Can Dogs Eat – A Complete List</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/What-Human-Foods-Can-Dogs-Eat-Featured-Image-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">Learn what human food can dogs eat from our comprehensive list. It’s had to resist giving your dog food from the table, but know the facts before you do!</h1>
+                </div>
+            </div>
+        </div>
+        <div id="post-2">
+            <div class="grid flex-row grid-cols-12 mt-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">28</h1>
+                    <h1 class="font-light text-center text-gray-400">April</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">N</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- News</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">Meow Mix Recalls Due to Salmonella Risk</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/Meow-Mix-Recalls-Due-to-Salmonella-Risk-Featured-Image-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">On April 9th, 2021, the J.M. Smucker Company Co. announced a voluntary recall on Meow Mix Original Dry…</h1>
+                </div>
+            </div>
+        </div>
+        <div id="post-3">
+            <div class="grid flex-row grid-cols-12 mt-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">25</h1>
+                    <h1 class="font-light text-center text-gray-400">April</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">N</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- News</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">Happy National Pet Parents Day to Fur Baby Parents!</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/Happy-National-Pet-Parents-Day-to-Fur-Baby-Parents-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">Happy National Pet Parents Day to Fur Baby Parents! Hey pet parents, do you find yourself celebrating Mother’s…</h1>
+                </div>
+            </div>
+        </div>
+        <div id="post-4">
+            <div class="grid flex-row grid-cols-12 mt-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">24</h1>
+                    <h1 class="font-light text-center text-gray-400">April</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">N</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- News</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">Celebrate Your Vet With World Veterinary Day</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/Celebrate-Your-Vet-with-World-Veterinary-Day-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">Today is World Veterinary Day!!! We are celebrating vets and everything they do to keep our animal companions…</h1>
+                </div>
+            </div>
+        </div>
+        <div id="post-5">
+            <div class="grid flex-row grid-cols-12 mt-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">23</h1>
+                    <h1 class="font-light text-center text-gray-400">April</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">N</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- News</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">Help #ClosegariaCruelCages in Bulgaria</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/Help-ClosegariaCruelCages-in-Bulgaria-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">Did you know that many wild animals are born in captivity in horrendous conditions and with a slim…</h1>
+                </div>
+            </div>
+        </div>
+        <div id="post-6">
+            <div class="grid flex-row grid-cols-12 mt-12">
+                <div class="inline-block col-span-1">
+                    <h1 class="text-5xl font-thin text-center font-lundrina">22</h1>
+                    <h1 class="font-light text-center text-gray-400">April</h1>
+                </div>
+                <div class="inline-block col-span-11 my-auto ml-5">
+                    <h1 class="inline-block px-4 py-2 my-auto text-4xl text-white bg-yellow-400 font-lundrina">N</h1>
+                    <h1 class="inline-block py-2 my-auto font-thin ">- News</h1>
+                </div>
+            </div>
+            <div class="h-auto px-16 my-4 ml-8 border-l border-gray-200">
+                <button class="text-4xl focus:outline-none hover:text-gray-500 font-lundrina">Earth Day, Everyone’s Day: April 22!</button>
+                <div class="inline-block mt-4">
+                    <h1 class="inline-block text-xs font-thin text-gray-500">by<button class="ml-2 font-normal text-black hover:text-gray-500 focus:outline-none ">Chavdar Vasilev</button></h1>
+                    <h1 class="inline-block ml-2 text-xs font-thin text-gray-500 ">12 minute read</h1>
+                    <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2021/04/Earth-Day-Featured-Image-800x500.jpg" alt="">
+                    <h1 class="mt-4 text-lg font-thin font-">April 22nd is an important and exceptional day for everyone. It’s Earth Day! Did you know that the…</h1>
+                </div>
+            </div>
+        </div>
+        <div class="mt-24 flex">
+            <button class="px-20 rounded-md mx-auto bg-yellow-400 text-white  py-3">
+                <h1>Load More</h1>
+            </button>
+        </div>
+    </div>
+
+    <!-- Futured Posts! -->
+    <div id="futured-posts" class="col-auto md:h-1/3 md:sticky top-8 mx-auto md:col-span-3">
+        <h1 class="text-2xl underline font-lundrina">Futured Posts:</h1>
+        <div>
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/cat-facts-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">101 Fascinating Cat Facts for 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+        <div class="mt-10">
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/dog-facts-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">101 Incredible Dog Facts for 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+        <div class="mt-10">
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/most-popular-cat-breeds-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">50 of the Most Popular Cat Breeds of 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="mt-24 pb-16 grid md:grid-cols-12">
+    <div class="col-span-3">
+        <img class="w-52" src="https://petpedia.co/wp-content/uploads/2020/05/FooterLogo@2x-e1603411112640.png" alt="">
+        <h1 class="text-xs mt-2 font-thin">©2020 Petpedia.co – All Rights Reserved.</h1>
+    </div>
+    <div class="col-span-6">
+        <div class="grid grid-cols-3">
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Home</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Affiliate Disclosure</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">About Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Privacy Policy</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Contact Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Terms of Use</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-3 inline-block">
+        <div class="justify-items-end float-right flex ">
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="px-4 font-niramit mx-auto md:px-32 max-w-screen-2xl">
+<div class="grid grid-cols-3  py-4 text-gray-700 bg-white border-b border-gray-200 ">
+    <div x-data="{ open: false }" class="flex flex-col md:items-left md:flex-row ">
+        <div class="flex flex-row justify-between py-4 items-left">
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!--Menu-->
+        <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-left md:flex-row">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-2 py-2 mt-2 text-lg text-left hover:underline font-lundrina md:w-auto md:inline md:mt-0 focus:outline-none focus:shadow-outline">
+                    <span>Reviews</span>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute rounded-md shadow-lg center w-max md:w-48">
+                    <div class="">
+                        <div class="absolute grid p-2 bg-white shadow-lg top-full">
+                            <ul class="">
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Best Pet Products</a></li>
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Pet Company Review</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 hover:underline font-lundrina focus:outline-none focus:shadow-outline" href="#">Deals</a>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 font-lundrina hover:underline focus:outline-none focus:shadow-outline" href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">News</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">About</a>
+        </div>    
+    </div>
+    <div class="flex justify-center col-span-1 ">
+        <img class="w-20 h-10" src="https://petpedia.co/wp-content/uploads/2020/05/Logo@2x.png" alt="">
+    </div>
+    <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-end md:flex-row">
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+    </div>
+</div>
+
+
+<div class="grid grid-cols-1 gap-4 mt-12 md:grid-cols-12 ">
+    <div class="col-span-9 pr-20 ">
+        <h1 class="font-lundrina text-5xl">About Us</h1>
+        <img class="mt-16" src="https://petpedia.co/wp-content/uploads/2019/11/Twitter-1024x342.png" alt="">
+        <h1 class="text-lg mt-6 text-left leading-relaxed text-gray-600 ">Is your pet your best friend? Are you willing to go above and beyond to make sure your companion animal is happy and content? Then you’ve come to the right site! 
+            <br><br>
+            At Petpedia.co, we understand why people love pets. They are cute and loveable. Well, this goes without saying. They offer companionship and comfort. They improve our health and wellbeing. They make us laugh. And for some of us in this modern day and age, they are a substitute for human contact. But, we are also aware that owning a pet isn’t all fun and games. It takes a lot of work to look after another living creature, especially one that can’t take care of itself. 
+            <br><br>
+            That’s why it is crucial that owners have a trusted go-to knowledge resource that provides them with all they need to know about pet care, from advice about your pet’s health to training tips and pointers on how to have a happy and playful friend.
+            <br><br>
+            Animals can have a hard life as not all pets get a chance at a happy and caring home. It is shocking how many cats and dogs are abandoned every day in shelters or simply left on the street to fend for themselves. We believe that raising awareness about such issues, as well as others that affect domestic animals worldwide, will help make a small dent in the number of mistreated pets everywhere. 
+            <br><br>
+            Our team is dedicated to giving you the best and latest information on all things pet-related. We appreciate how much owners want to keep up-to-date with all the new developments on the pet market, so we strive to provide them with the most relevant facts and figures of the animal kingdom. 
+            <br><br>
+            We also know that choosing to get a pet, as well as for settling on the right one for you, can be a very tough decision to make. Let us help you make the right call by giving all the info on pets you could or ever would want to know!
+        </h1>
+        <h1 class="font-lundrina text-4xl text-center mt-8">Meet Our Team!</h1>
+        
+        <div>
+            <div class=" mt-16  flex">
+                <img class="rounded-full" src="https://secure.gravatar.com/avatar/28fa6c0f3dc4539a524cd5364a18f90a?s=60&d=wavatar&r=g" alt="">
+                <h1 class="font-lundrina my-auto text-3xl ml-8">Aleksandar Hrubenja</h1>
+            </div>
+            <h1 class="text mt-6 border-b border-gray-200 pb-4 text-left  text-gray-600 ">Good content writing is based on proper research and a thorough understanding of the English language. For as long as he can remember, Aleksandar has been passionate about languages. Writing articles covering a variety of subjects like fitness, health, and self-improvement, as well as lighter ones like geekdom and pets, he prides himself on being able to tackle any topic you throw at him. With a degree in English literature and linguistics, and years of experience in content writing and research work, he looks forward to every new writing challenge.</h1>
+            <h1 class="font-lundrina text-2xl underline mt-4">Latest from Aleksandar Hrubenja</h1>
+            <ul class="text-sm mt-4 text-left md:mr-40  text-gray-400">
+                <button class="focus:outline-none"><li class="hover:text-black">→ 46 Crucial Endangered Species Statistics for 2021 and Beyond</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 45 Disturbing Animal Abuse Statistics We Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 54 Dog Statistics All Animal Lovers Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 36 Pet Ownership Statistics for 2021: Learn Before You Adopt</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 37 Alarming Pet Adoption Statistics We Must Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ Cat Grooming: The Ultimate Stress-Free Guide</li></button>
+            </ul>
+        </div>
+
+        <div>
+            <div class=" mt-16 flex">
+                <img class="rounded-full" src="https://secure.gravatar.com/avatar/7a4f3d421d96ecc0bea1de4fb620e8c7?s=60&d=wavatar&r=g" alt="">
+                <h1 class="font-lundrina my-auto text-3xl ml-8">Antonia Cirjak</h1>
+            </div>
+            <h1 class="text mt-6 border-b border-gray-200 pb-4 text-left  text-gray-600 ">Antonia is a sociologist and an anglicist by education but a writer and a behavior enthusiast by inclination. If she's not writing, editing, or reading, you can usually find her snuggling with her huge dog or being obsessed with a new true-crime podcast. She also has a (questionably) healthy appreciation for avocados and Seinfeld.</h1>
+            <h1 class="font-lundrina text-2xl underline mt-4">Latest from Antonia Cirjak</h1>
+            <ul class="text-sm mt-4 text-left md:mr-40  text-gray-400">
+                <button class="focus:outline-none"><li class="hover:text-black">→ 46 Crucial Endangered Species Statistics for 2021 and Beyond</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 45 Disturbing Animal Abuse Statistics We Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 54 Dog Statistics All Animal Lovers Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 36 Pet Ownership Statistics for 2021: Learn Before You Adopt</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 37 Alarming Pet Adoption Statistics We Must Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ Cat Grooming: The Ultimate Stress-Free Guide</li></button>
+            </ul>
+        </div>
+
+        <div>
+            <div class=" mt-16 flex">
+                <img class="rounded-full" src="https://secure.gravatar.com/avatar/dc1f8a2adaf9022848521996ea271769?s=60&d=wavatar&r=g" alt="">
+                <h1 class="font-lundrina my-auto text-3xl ml-8">Filip Isakov</h1>
+            </div>
+            <h1 class="text mt-6 border-b border-gray-200 pb-4 text-left  text-gray-600 ">Antonia is a sociologist and an anglicist by education but a writer and a behavior enthusiast by inclination. If she's not writing, editing, or reading, you can usually find her snuggling with her huge dog or being obsessed with a new true-crime podcast. She also has a (questionably) healthy appreciation for avocados and Seinfeld.</h1>
+            <h1 class="font-lundrina text-2xl underline mt-4">Latest from Filip Isakov</h1>
+            <ul class="text-sm mt-4 text-left md:mr-40  text-gray-400">
+                <button class="focus:outline-none"><li class="hover:text-black">→ 46 Crucial Endangered Species Statistics for 2021 and Beyond</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 45 Disturbing Animal Abuse Statistics We Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 54 Dog Statistics All Animal Lovers Should Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 36 Pet Ownership Statistics for 2021: Learn Before You Adopt</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ 37 Alarming Pet Adoption Statistics We Must Know in 2021</li></button>
+                <button class="focus:outline-none"><li class="hover:text-black">→ Cat Grooming: The Ultimate Stress-Free Guide</li></button>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Futured Posts! -->
+    <div id="futured-posts" class="col-auto md:h-1/3 md:sticky top-8 mx-auto md:col-span-3">
+        <h1 class="text-2xl underline font-lundrina">Futured Posts:</h1>
+        <div>
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/cat-facts-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">101 Fascinating Cat Facts for 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+        <div class="mt-10">
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/dog-facts-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">101 Incredible Dog Facts for 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+        <div class="mt-10">
+            <img class="mt-4 rounded-md" src="https://petpedia.co/wp-content/uploads/2019/12/most-popular-cat-breeds-300x180.jpg" alt="catt">
+            <button class="mt-2 text-left focus:outline-none hover:text-gray-500 text-lg font-lundrina">50 of the Most Popular Cat Breeds of 2021 (Infographic)</button>
+            <h1 class="mt-2 text-xs font-thin text-gray-500">Last updated : March 25, 2021</h1>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="mt-24 pb-16 grid md:grid-cols-12">
+    <div class="col-span-3">
+        <img class="w-52" src="https://petpedia.co/wp-content/uploads/2020/05/FooterLogo@2x-e1603411112640.png" alt="">
+        <h1 class="text-xs mt-2 font-thin">©2020 Petpedia.co – All Rights Reserved.</h1>
+    </div>
+    <div class="col-span-6">
+        <div class="grid grid-cols-3">
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Home</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Affiliate Disclosure</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">About Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Privacy Policy</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Contact Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Terms of Use</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-3 inline-block">
+        <div class="justify-items-end float-right flex ">
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

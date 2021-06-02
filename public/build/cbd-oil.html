@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cbd Oil</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="max-w-screen-2xl font-niramit mx-auto">
+<div class="grid px-4 mx-auto md:px-32 max-w-screen-2xl grid-cols-3  py-4 text-gray-700 bg-white border-b border-gray-200 ">
+    <div x-data="{ open: false }" class="flex flex-col md:items-left md:flex-row ">
+        <div class="flex flex-row justify-between py-4 items-left">
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!--Menu-->
+        <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-left md:flex-row">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-2 py-2 mt-2 text-lg text-left hover:underline font-lundrina md:w-auto md:inline md:mt-0 focus:outline-none focus:shadow-outline">
+                    <span>Reviews</span>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute rounded-md shadow-lg center w-max md:w-48">
+                    <div class="">
+                        <div class="absolute grid p-2 bg-white shadow-lg top-full">
+                            <ul class="">
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Best Pet Products</a></li>
+                                <li><a href="" class="block p-2 cursor-pointer hover:text-gray-400 font-lundrina ">Pet Company Review</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 hover:underline font-lundrina focus:outline-none focus:shadow-outline" href="#">Deals</a>
+                <a class="px-4 py-2 mt-2 text-lg md:mt-0 font-lundrina hover:underline focus:outline-none focus:shadow-outline" href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">News</a>
+                <a class="px-4 py-2 mt-2 text-lg font-lundrina md:mt-0 hover:underline focus:outline-none focus:shadow-outline" href="#">About</a>
+        </div>    
+    </div>
+    <div class="flex justify-center col-span-1 ">
+        <img class="w-20 h-10" src="https://petpedia.co/wp-content/uploads/2020/05/Logo@2x.png" alt="">
+    </div>
+    <div :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden col-span-1 md:pb-0 md:flex md:justify-end md:flex-row">
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+        <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+    </div>
+</div>
+
+<div class="flex">
+    <img class="w-screen  h-96 md:h-auto " src="images/cbdoil.jpg" alt="">
+    <div class="absolute hidden mx-auto md:px-32 max-w-screen-2xl  md: md:flex mt-14">
+        <button class="inline-block bg-green-400 rounded-lg focus:outline-none">
+            <h1 class="px-4 pt-6 text-6xl font-thin text-white font-lundrina ">R</h1>
+        </button>
+        <h1 class="items-center inline-block p-4 mt-8 text-xl font-thin text-white font-lundrina "> - Reviews</h1>
+    </div>
+    <div class="absolute px-4 mx-auto md:px-32 max-w-screen-2xl flex m-10 mt-40 md:bottom-40">
+        <button class="text-white hover:opacity-50 focus:outline-none">
+            <h1 class="text-4xl md:text-7xl text-left font-lundrina">The Best CBD Oil for Dogs in 2021 (Reviews & Buyer’s Guide)</h1>
+        </button>
+    </div>
+    <div class="absolute px-4 mx-auto md:px-32 max-w-screen-2xl flex m-10 mt-72 md:bottom-32">
+        <h1 class="text-xs text-gray-300 font-extralight font-lundrina">
+            by <span class="font-normal">Chavdar Vasilev</span> 
+            Last updated:
+            March 12, 2021
+        </h1>
+    </div>
+</div>
+
+<div class=" max-w-screen-2xl mx-4 mt-24 md:mx-80">
+    <h1 class="text-lg leading-relaxed text-gray-600 ">We have conducted thorough research and compiled a list of the best CBD oils for dogs currently on the market.
+        <br><br>
+        Below you will find only the top quality brands based on ingredient sourcing, effectiveness, safety, company history, and more.
+        <br><br>
+        But first, take a quick look at our selection of the best CBD oils for pets.</h1>
+</div>
+
+<div class=" max-w-screen-2xl mt-24 mx-4 md:mx-80">
+    <div class="border  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/05/Honest-Paws-CBD-Oil-for-Dogs-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">10</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border mt-8  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/06/HempMy-CBD-Oil-for-Pets-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">9.9</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border mt-8  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/05/Charlotte’s-Web-CBD-Oil-for-Dogs-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">9.8</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border mt-8  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/05/Honest-Paws-CBD-Oil-for-Dogs-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">10</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border mt-8  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/06/HempMy-CBD-Oil-for-Pets-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">9.9</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+    <div class="border mt-8  border-gray-100 shadow-xl ">
+        <div class="grid py-5 border-l-4  rounded-sm border-yellow-400 md:grid-cols-5 shadow-md ">
+            <div class="flex col-span-1 px-2 ">
+                <img src="https://petpedia.co/wp-content/uploads/2020/05/Charlotte’s-Web-CBD-Oil-for-Dogs-Logo-140x140.jpg" alt="">
+            </div>
+            <div class="col-span-1 my-auto  py-5">
+                <div class="flex justify-center my-auto mx-auto items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 inline-block justify-center items-center my-auto w-12" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <h1 class="inline-block my-auto ml-3 justify-center items-center text-4xl font-light font-lundrina">9.8</h1>
+                </div>
+                <h1 class="text-center text-xs">Read Expert Review</h1>
+            </div>
+            <div class="my-auto mx-auto col-span-2">
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">USE PETPEDIA FOR 15% OFF</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">Most-trusted pet CBD brand</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">3 CBD potency options available</h1>
+                    </svg>
+                </div>
+                <div class="pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 inline-block w-5" viewBox="0 0 20 20" fill="#FBBF24">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        <h1 class="inline-block items-center pl-1 my-auto text-sm font-medium ">All USDA Organic CBD oils</h1>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-auto mx-auto  px-1 items-center justify-center col-span-1">
+                <button class="bg-yellow-400 shadow-2xl flex hover:shadow-none focus:outline-none items-center justify-center mx-auto text-white px-6 py-2 rounded-xl">
+                    <h1 class="text-sm">Visit Site</h1>
+                </button>
+                <h1 class="font-medium mt-2 text-xs text-center">FROM $39.95$0.16-$0.32 per mg CBD</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class=" max-w-screen-2xl px-6 mx-4 mt-12 md:mx-80">
+    <h1 class="text-lg leading-relaxed text-gray-600 italic ">Disclaimer: All products reviewed are not meant to diagnose, treat, or cure any medical condition or illness. Consult a professional if you have any doubts about using CBD.
+        <br><br>
+        This page may contain affiliate links. For more details, check out our affiliate disclosure.</h1>
+</div>
+
+<div class=" max-w-screen-2xl px-6 mx-4 mt-12 md:mx-80">
+    <h1 class="text-4xl leading-relaxed font-lundrina text-left ">The Best CBD Oil for Dogs (2021) – Editor’s Choice:</h1>
+    <ul class="text-lg text-yellow-500 list-disc ml-12">
+        <li>Honest Paws – Overall Best CBD Oil for Dogs and Pets</li>
+        <li>HempMy Pet – Best Hemp Oil for Seizures in Dogs</li>
+        <li>The Anxious Pet – Best Organic Hemp Oil for Dogs</li>
+        <li>Joy Organics CBD Review – Best CBD for Dogs Suffering from Chronic Pain</li>
+        <li>HolistaPet – Best CBD for Dogs With Chronic Pain</li>
+    </ul>
+</div>
+
+<div class=" max-w-screen-2xl px-6 mx-4 mt-12 md:mx-80">
+    <h1 class="text-5xl leading-relaxed font-lundrina border-b-2 border-yellow-500 text-center ">CBD Oil for Dogs: Reviews</h1>
+    <h1 class="mt-4">Now that you’ve seen our top choices, let’s examine in greater detail why these products are the best CBD for pets, and especially your dog.</h1>
+    <div class=" mt-16 grid grid-cols-3">
+        <div class="col-span-2 flex">
+            <h1 class="text-4xl my-auto font-lundrina">Honest Paws CBD Oil for Pets <br>Review</h1>
+        </div>
+        <div class="col-span-1  float-right flex">
+            <img class="w-60 border border-gray-300" src="https://petpedia.co/wp-content/uploads/2020/05/Honest-Paws-CBD-Oil-for-Dogs-Reviews1.jpg" alt="">
+        </div>
+    </div>
+    <div class="bg-gray-200 mt-12 px-8 py-12 rounded-md">
+        <h1 class="font-lundrina text-3xl text-gray-600">Overall Best CBD Oil for Dogs and Pets</h1>
+        <h1 class="font-lundrina mt-6 text-2xl text-gray-600">Rating: 10</h1>
+        <ul class="text-lg text-gray-400 list-disc mt-12 ml-8">
+            <li>Organic</li>
+            <li>Full-spectrum hemp oil</li>
+            <li>Third-party lab results available in the product description</li>
+            <li>Free shipping for orders over $40</li>
+            <li>30-day money-back guarantee</li>
+            <li>Options available: Wellness, Calm, Mobility, and Relief</li>
+            <li>125mg, 250mg, and 500mg CBD options in 30ml bottles</li>
+            <li>$0.16 – $0.32 per mg CBD</li>
+            <li>Price: $39.95 – $99.95</li>
+        </ul>
+        <h1 class="font-lundrina mt-12 text-2xl text-center text-gray-600">Use PETPEDIA for 15% Off at Checkout</h1>
+        <button class="bg-yellow-500 text-white text-sm py-6 focus:outline-none px-8 flex mx-auto mt-8 rounded-md">
+            <h1>Visit Site</h1>
+        </button>
+    </div>
+    <div class=" mt-12 ">
+        <h1 class="text-lg leading-relaxed text-gray-600  ">Honest Paws is one of the most trusted and reliable CBD companies. Whether you need CBD oil for health-related issues, or you just want to improve your dog’s well-being, this company has got you covered.
+            <br><br>
+            From our own experience and numerous positive Honest Paws CBD oil reviews, we can safely say that Honest Paws is a one-stop shop for all your dog’s needs, plus several for horses and cats.
+            <br><br>
+            They offer several CBD oils catered to different issues your dog may experience with unique ingredients to help, plus three potency options for each. 
+            <br><br>
+            Honest Paws CBD oil is made from USDA organic hemp. It’s grown in Oregon and extracted with CO2 technology.
+            <br><br>
+            Not only is their CBD GMO-free, but it’s also soy-free, and emulsified with all-natural MCT oil that is extracted from a renewable coconut farm. All of their products are tested, which is proven by the COA available on their website.
+        </h1>
+    </div>
+    <div class="mt-12 grid-cols-2 grid">
+        <div class="col-span-1">
+            <h1 class="font-lundrina text-3xl">✔ Pros:</h1>
+            <ul class="text-lg  list-disc mt-8 ml-8">
+                <li>All-natural ingredients</li>
+                <li>Variety of CBD potencies</li>
+                <li>Many ways to save</li>
+                <li>Selection of other pet products</li>
+                <li>Transparent company</li>
+            </ul>
+        </div>
+        <div class="col-span-1">
+            <h1 class="font-lundrina text-3xl">✖ Cons:</h1>
+            <ul class="text-lg  list-disc mt-8 ml-8">
+                <li>Lab results don’t show pesticide testing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-gray-200 mt-12 px-8 py-12 rounded-md">
+        <h1 class="font-lundrina text-center text-3xl text-gray-600">Save with Honest Paws Coupons and Deals!</h1>
+        <button class="bg-yellow-500 text-white text-sm py-6 focus:outline-none px-8 flex mx-auto mt-8 rounded-md">
+            <h1>Visit Site</h1>
+        </button>
+    </div>
+    <div class="bg-gray-200 mt-12 px-8 py-12 rounded-md">
+        <h1 class="font-lundrina text-center text-3xl text-gray-600">Full Honest Paws Review</h1>
+        <button class="bg-yellow-500 text-white text-sm py-6 focus:outline-none px-8 flex mx-auto mt-8 rounded-md">
+            <h1>Continue Reading</h1>
+        </button>
+    </div>
+</div>
+
+<div class="mt-24 pb-16 px-4 mx-auto md:px-32 max-w-screen-2xl grid md:grid-cols-12">
+    <div class="col-span-3">
+        <img class="w-52" src="https://petpedia.co/wp-content/uploads/2020/05/FooterLogo@2x-e1603411112640.png" alt="">
+        <h1 class="text-xs mt-2 font-thin">©2020 Petpedia.co – All Rights Reserved.</h1>
+    </div>
+    <div class="col-span-6">
+        <div class="grid grid-cols-3">
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Home</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Affiliate Disclosure</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">About Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Privacy Policy</button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div>
+                    <button class="font-lundrina text-lg">Contact Us</button>
+                </div>
+                <div>
+                    <button class="font-lundrina py-6 text-lg">Terms of Use</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-span-3 inline-block">
+        <div class="justify-items-end float-right flex ">
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 1024 1024"><path fill="#1877f2" d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"/><path fill="#fff" d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="126.444 2.281 589 589"><circle cx="420.944" cy="296.781" r="294.5" fill="#2daae1"/><path fill="#fff" d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"/></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><switch><g><path fill="#0A7BBA" d="M506 256.879c0 138.066-111.934 250-250 250-138.067 0-250-111.934-250-250 0-138.067 111.933-250 250-250 138.066 0 250 111.933 250 250zm0 0"/><path fill="#F2F2F2" d="M405.36 276.985v103.076h-59.753v-96.157c0-24.153-8.617-40.647-30.269-40.647-16.493 0-26.308 11.119-30.638 21.869-1.588 3.83-1.98 9.161-1.98 14.558v100.378h-59.774s.805-162.873 0-179.734h59.774v25.478c-.108.196-.282.389-.392.585h.392v-.585c7.943-12.227 22.108-29.702 53.856-29.702 39.321 0 68.784 25.698 68.784 80.881zM160.452 113.698c-20.455 0-33.815 13.426-33.815 31.052 0 17.255 12.969 31.049 33.032 31.049h.37c20.846 0 33.815-13.793 33.815-31.049-.392-17.625-12.969-31.052-33.402-31.052zm-30.268 266.364h59.731V200.328h-59.731v179.734zm0 0"/></g></switch></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)"><path d="M2 0h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0z"/><path d="M20 2L10 9 0 2"/></g></svg>
+            <svg class="items-center justify-center mx-2 my-auto w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M87.4 77.7L68.5 58.8c3.2-5 4.7-10.8 4.7-16.5C73.2 25.4 59.7 12 42.8 12 25.2 12 11.9 25.9 12 42.6c.1 16.7 13.6 30.6 30.8 30.6 5.8 0 11.3-1.6 16.1-4.6l18.9 18.8c.8.8 2 .8 2.8 0l6.9-6.9c.7-.8.7-2-.1-2.8zm-44.6-8.5c-15 0-26.7-12.1-26.8-26.7-.1-14.4 11.4-26.6 26.8-26.6 15 0 26.3 11.7 26.4 26.3.1 15.6-12.2 27-26.4 27zm36.3 14l-17-17c.6-.5 3.4-3.3 4.1-4.1l17 17-4.1 4.1z"/><path fill="#00F" d="M244-370v1684h-1784V-370H244m8-8h-1800v1700H252V-378z"/></svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
